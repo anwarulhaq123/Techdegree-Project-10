@@ -3,13 +3,13 @@ React full Stack
 
 To complete this full stack application ihave used the following 
 
-Create your React project
+Create my React project
 
 i have used the the create-react-app tool to set up and create your React project in a folder named client.
 To do this, run the command npx create-react-app client from the root of your repo.
 
 
-Set up your REST API
+Set up my REST API
 
 
  I add  a folder named api to the root of  repo.
