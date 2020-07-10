@@ -15,7 +15,7 @@ Set up my REST API
  I add  a folder named api to the root of  repo.
 Copy the REST API Express application from my unit 9 project into the api folder.
 
-Add CORS support to your REST API
+Add CORS support to My REST API
 
 
 While developing the React application, i was be using the create-react-app development server, which will host my application (by default) at http://localhost:3000/. my REST API, will be hosted separately from my React application at http://localhost:5000/. While both the React and REST API applications will be using the same hostname, localhost, their port numbers differ, so the browser will treat them as separate origins or domains.
