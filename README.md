@@ -1,7 +1,7 @@
 # Techdegree-Project-10
 React full Stack 
 
-To complete this full stack application ihave used the following 
+To complete this full stack application i have used the following 
 
 Create my React project
 
