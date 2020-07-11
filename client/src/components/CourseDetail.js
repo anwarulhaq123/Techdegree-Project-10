@@ -113,9 +113,6 @@ export default class CourseDetail extends Component {
                     {materialsNeeded.map((material) => (
                       <li key={material}>{material}</li>
                     ))}
-                    <ReactMarkdown>
-                      {courseDetails.materialsNeeded}
-                    </ReactMarkdown>
                   </ul>
                 </li>
               </ul>
@@ -126,4 +123,5 @@ export default class CourseDetail extends Component {
     );
   }
 }
+
 
