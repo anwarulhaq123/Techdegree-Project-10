@@ -108,7 +108,7 @@ export default class Data {
   }
   // get a course by id
   async getCourseDetails(id) {
-    const response = await this.api(`/courses/${id}`, "GET"); //get details of course from API using its ID
+    const response = await this.api(`/courses/${id}`, "GET");
     if (response.status === 200) {
       const course = await response.json().then((data) => data);
 
@@ -122,18 +122,24 @@ export default class Data {
     }
   }
 
-  // Update a course by its id
-  async updateCourse(id, course, emailAddress, password) {
-    const response = await this.api(`/courses/${id}`, "PUT", course, true, {
-      emailAddress,
-      password,
-    });
-    // If response id ok
+  // Update a course by Id
+  async updateCourse(courseId, course, emailAddress, password) {
+    const response = await this.api(
+      `/courses/${courseId}`,
+      "PUT",
+      course,
+      true,
+      { emailAddress, password }
+    );
     if (response.status === 204) {
       return [];
-    } else if (response.status === 400) {
+    } else if (
+      response.status === 400 ||
+      response.status === 401 ||
+      response.status === 403
+    ) {
       return response.json().then((data) => {
-        return data.errors;
+        return data;
       });
     } else {
       throw new Error();
