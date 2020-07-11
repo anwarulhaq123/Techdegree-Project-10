@@ -1,6 +1,8 @@
 //import the react
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+//import React Markdown
+import ReactMarkdown from "react-markdown";
 
 export default class CourseDetail extends Component {
   state = {
@@ -32,12 +34,12 @@ export default class CourseDetail extends Component {
             authenticatedUser: context.authenticatedUser,
           });
         } else {
-          this.props.history.push("/notfound");
+          this.props.history.push("/error");
         }
       })
       .catch((err) => {
         console.log(err);
-        this.props.history.push("/error");
+        this.props.history.push("/notfound");
       });
   }
 
@@ -95,7 +97,7 @@ export default class CourseDetail extends Component {
               </p>
             </div>
             <div className="course--description">
-              <p>{courseDetails.description}</p>
+              <ReactMarkdown>{courseDetails.description}</ReactMarkdown>
             </div>
           </div>
           <div className="grid-25 grid-right">
@@ -111,6 +113,9 @@ export default class CourseDetail extends Component {
                     {materialsNeeded.map((material) => (
                       <li key={material}>{material}</li>
                     ))}
+                    <ReactMarkdown>
+                      {courseDetails.materialsNeeded}
+                    </ReactMarkdown>
                   </ul>
                 </li>
               </ul>
@@ -121,3 +126,4 @@ export default class CourseDetail extends Component {
     );
   }
 }
+
