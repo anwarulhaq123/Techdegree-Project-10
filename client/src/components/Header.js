@@ -16,7 +16,7 @@ export default (props) => {
         <nav>
           {authUser ? (
             <React.Fragment>
-       Welcome, {authUser.firstName} {authUser.lastName} !
+      <span> Welcome, {authUser.firstName} {authUser.lastName} !</span>
               <Link className="signout" to="/signout">
                 Sign Out
               </Link>
